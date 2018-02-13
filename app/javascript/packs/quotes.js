@@ -4,5 +4,4 @@
  *
  * Distributed under terms of the MIT license.
  */
-import 'quotes';
-
+import 'quotes'
