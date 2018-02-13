@@ -1,0 +1,112 @@
+/* line 1, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+body {
+  font-family: sans-serif;
+}
+
+/* line 5, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+.quote-container {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 12, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+.quote-text {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* line 19, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+.quote {
+  width: 400px;
+  min-width: 200px;
+  padding: 10px;
+}
+
+/* line 25, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+.quote-text {
+  font-size: 1.3em;
+}
+
+/* line 29, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+.quote-author {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* line 34, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+.quote-open, .quote-close {
+  opacity: 0.8;
+  font-family: serif;
+}
+
+/* line 39, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+.quote-open {
+  float: left;
+  margin-right: 10px;
+  font-size: 4em;
+  font-weight: bold;
+}
+
+/* line 46, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+.quote-close {
+  float: right;
+  margin-left: 10px;
+  font-size: 4em;
+  font-weight: bold;
+}
+
+/* line 53, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+.link-next, .link-previous {
+  transition: all .2s ease-in-out;
+  color: black;
+  font-size: 4em;
+  margin: 20px;
+  opacity: 0.3;
+  padding-bottom: 25px;
+}
+/* line 60, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+.link-next:hover, .link-previous:hover {
+  transform: scale(1.1);
+}
+
+/* line 65, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  padding-bottom: 10px;
+  opacity: 0.5;
+}
+/* line 72, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+#footer a {
+  color: black;
+}
+/* line 74, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+#footer a:link {
+  text-decoration: none;
+}
+/* line 77, /home/t0m/Documents/github/rails-react-starter-tutorial/app/assets/stylesheets/quotes.scss */
+#footer a:hover {
+  text-decoration: underline;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
