@@ -1,13 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import queryString from 'query-string'
-import axios from 'axios'
+import React from 'react';
+import { Redirect } from 'react-router-dom';
+import queryString from 'query-string';
+import axios from 'axios';
+import QuoteText from './QuoteText';
+import QuoteNavigation from './QuoteNavigation';
+import QuoteFooter from './QuoteFooter';
 
 class QuotesDisplay extends React.Component {
   constructor () {
     super()
     this.state = {
-      quote: {}
+      quote: {},
+      fireRedirect: false
     }
   }
 
@@ -18,6 +22,7 @@ class QuotesDisplay extends React.Component {
         })
         .catch(error => {
           console.error(error)
+          this.setState({ fireRedirect: true })
         })
   }
 
@@ -27,7 +32,7 @@ class QuotesDisplay extends React.Component {
       // assign quote ID from the URL's query string
       this.quoteId = Number(this.qsParams.quote)
     } else {
-      this.quoteId = 1
+      this.quoteId = this.props.startingQuoteId
       // update URL in browser to reflect current quote in query string
       this.props.history.push(`/?quote=${this.quoteId}`)
     }
@@ -44,13 +49,27 @@ class QuotesDisplay extends React.Component {
   }
 
   render () {
-    const nextQuoteId = Number(this.state.quote.id) + 1
+    const quote = this.state.quote
+    const nextQuoteId = quote.next_id
+    const previousQuoteId = quote.previous_id
 
     return (
       <div>
-        <Link to={`/?quote=${nextQuoteId}`}>Next</Link>
-        <p>{this.state.quote.text}</p>
-        <p>{this.state.quote.author}</p>
+        <div className='quote-container'>
+          {this.state.fireRedirect &&
+          <Redirect to={'/'} />
+            }
+          {previousQuoteId &&
+          <QuoteNavigation direction='previous' otherQuoteId={previousQuoteId} />
+            }
+          <QuoteText quote={this.state.quote} />
+          {nextQuoteId &&
+          <QuoteNavigation direction='next' otherQuoteId={nextQuoteId} />
+            }
+        </div>
+        {this.state.quote.id !== parseInt(this.props.startingQuoteId, 10) &&
+        <QuoteFooter startingQuoteId={this.props.startingQuoteId} />
+          }
       </div>
     )
   }
