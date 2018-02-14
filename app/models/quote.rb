@@ -7,4 +7,3 @@ class Quote < ApplicationRecord
     self.class.where('id < ?', self.id).pluck(:id).last
   end
 end
-

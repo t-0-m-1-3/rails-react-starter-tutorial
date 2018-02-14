@@ -1,10 +1,10 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import queryString from 'query-string';
-import axios from 'axios';
-import QuoteText from './QuoteText';
-import QuoteNavigation from './QuoteNavigation';
-import QuoteFooter from './QuoteFooter';
+import React from 'react'
+import { Redirect } from 'react-router-dom'
+import queryString from 'query-string'
+import axios from 'axios'
+import QuoteText from './QuoteText'
+import QuoteNavigation from './QuoteNavigation'
+import QuoteFooter from './QuoteFooter'
 
 class QuotesDisplay extends React.Component {
   constructor () {
@@ -67,9 +67,9 @@ class QuotesDisplay extends React.Component {
           <QuoteNavigation direction='next' otherQuoteId={nextQuoteId} />
             }
         </div>
-        {this.state.quote.id !== parseInt(this.props.startingQuoteId, 10) &&
-        <QuoteFooter startingQuoteId={this.props.startingQuoteId} />
-          }
+        {this.state.quote.id !== Number(this.props.startingQuoteId) &&
+          <QuoteFooter startingQuoteId={this.props.startingQuoteId} />
+        }
       </div>
     )
   }

@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-      @first_quote_id = Quote.first.id
+    # We need to set a first quote's ID here
+    @first_quote_id = Quote.first.id
   end
-
 end
